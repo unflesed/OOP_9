@@ -65,7 +65,8 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return id == car.id && year == car.year && Double.compare(car.price, price) == 0 && brand.equals(car.brand) && model.equals(car.model) && color.equals(car.color) && regNumber.equals(car.regNumber);
+        return id == car.id && year == car.year && Double.compare(car.price, price) == 0 && brand.equals(car.brand) &&
+                model.equals(car.model) && color.equals(car.color) && regNumber.equals(car.regNumber);
     }
     @Override
     public int hashCode() {
@@ -131,7 +132,7 @@ class Main{
                     break;
                 case 4:
                     for (int i = 1; i < cars.length; i++) {
-                        if (cars[0].equals(cars[i]) ) {
+                        if (cars[0].equals(cars[i]) && cars[0].hashCode() == cars[i].hashCode() ) {
                             counter++;
                         }
                         System.out.println("Количество одинаковых автомобилей сравнивая с первым автомобилем: " +
